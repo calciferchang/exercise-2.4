@@ -28,7 +28,10 @@ function setup() {
     options: { width: 400, height: 400 },
   });
 
-  for (let i = 0; i < num; i++) {
+  mouse = Mouse.create(document.body);
+  mouseConstraint = MouseConstraint.create(engine, mouse);
+
+  for (i = 0; i < num; i++) {
     let x = 200 + i * 20;
     let y = random(0, 40);
 
@@ -50,10 +53,6 @@ function setup() {
   Composites.chain(chains, 0, 0, 0, 0, options);
 
   ground = Bodies.rectangle(200, 350, 400, 10, { isStatic: true });
-
-  mouse = Mouse.create(document.body);
-  mouseConstraint = MouseConstraint.create(engine, mouse);
-
   Composite.add(engine.world, [chains, ground, mouseConstraint]);
 
   Render.run(render);
