@@ -2,9 +2,9 @@ const {
   Engine,
   Body,
   Bodies,
-  Constraint,
   Composite,
   Composites,
+  Constraint,
   Mouse,
   MouseConstraint,
   Render,
@@ -31,12 +31,12 @@ function setup() {
   mouse = Mouse.create(document.body);
   mouseConstraint = MouseConstraint.create(engine, mouse);
 
-  for (i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     let x = 200 + i * 20;
-    let y = random(0, 40);
+    let y = random(10, 40);
 
     let fixed;
-    if (i === 0) {
+    if (i == 0) {
       fixed = true;
     } else {
       fixed = false;
@@ -59,11 +59,3 @@ function setup() {
   runner = Runner.create();
   Runner.run(runner, engine);
 }
-
-// mouse = Mouse.create(render.canvas);
-// mouseConstraint = MouseConstraint.create(engine, {
-//   mouse: mouse,
-//   constraint: {
-//     stiffness: 0.2,
-//   },
-// });
