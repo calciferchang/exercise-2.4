@@ -28,7 +28,7 @@ function setup() {
     options: { width: 400, height: 400 },
   });
 
-  mouse = Mouse.create(document.body);
+  mouse = Mouse.create(render.canvas);
   mouseConstraint = MouseConstraint.create(engine, mouse);
 
   for (let i = 0; i < num; i++) {
